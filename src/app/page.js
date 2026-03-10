@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import Ajuda from "@/components/ajuda";
 import IntersectionAnimation from "@/components/anim";
 import BotaoZap from "@/components/botao-zap";
@@ -7,9 +9,13 @@ import Footer from "@/components/footer";
 import Oportunidade from "@/components/oportunidade";
 import Redes from "@/components/redes";
 import Sobreme from "@/components/sobreme";
+import { ImovelService } from "@/shared/services/imovel.service";
 import Link from "next/link";
 
-export default function Home() {
+export default async function HomePage() {
+
+  const imovelOportunidade = await ImovelService.getOportunidade();
+
   return (
     <>
       <header className="py-4 heading-bg heading-section">
@@ -181,7 +187,7 @@ export default function Home() {
                 >
                   <img
                     src="/images/corpal.avif"
-                    className="d-inline-block cratio w-100"                    
+                    className="d-inline-block cratio w-100"
                     style={{ aspectRatio: '375/86' }}
                     alt="Imagem da logo da empresa Corpal"
                   />
@@ -196,7 +202,7 @@ export default function Home() {
                 >
                   <img
                     src="/images/abitte.avif"
-                    className="d-inline-block cratio w-100"                    
+                    className="d-inline-block cratio w-100"
                     style={{ aspectRatio: '375/155' }}
                     alt="Imagem da logo da empresa Abitte"
                   />
@@ -211,7 +217,7 @@ export default function Home() {
                 >
                   <img
                     src="/images/plaenge.avif"
-                    className="d-inline-block cratio w-100"                    
+                    className="d-inline-block cratio w-100"
                     style={{ aspectRatio: '375/75' }}
                     alt="Imagem da logo da empresa Plaenge"
                   />
@@ -226,7 +232,7 @@ export default function Home() {
                 >
                   <img
                     src="/images/saobenedito.avif"
-                    className="d-inline-block cratio w-100"                    
+                    className="d-inline-block cratio w-100"
                     style={{ aspectRatio: '286/183' }}
                     alt="Imagem da logo da empresa São Benedito"
                   />
@@ -236,7 +242,7 @@ export default function Home() {
           </div>
         </div>
 
-        <Oportunidade />
+        {imovelOportunidade && <Oportunidade imovel={imovelOportunidade} />}
         <Sobreme />
         <Ajuda />
         <Redes />

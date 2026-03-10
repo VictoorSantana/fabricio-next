@@ -1,3 +1,5 @@
+"use server"
+
 import IntersectionAnimation from "@/components/anim";
 import BotaoZap from "@/components/botao-zap";
 import Destaques from "@/components/destaques";
@@ -10,7 +12,7 @@ import Local from "@/components/local";
 
 
 
-export default function Sobre() {
+export default async function SobrePage() {
 
     return (
         <>

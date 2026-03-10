@@ -1,7 +1,4 @@
-
-
-// import { useParams } from "next/navigation";
-// import { useState } from "react";
+export const dynamic = 'force-dynamic'
 
 import IntersectionAnimation from "@/components/anim";
 import BotaoZap from "@/components/botao-zap";
@@ -15,8 +12,7 @@ import { ImovelService } from "@/shared/services/imovel.service";
 
 
 
-
-export default async function Detalhes({ params }) {
+export default async function DetalhesPage({ params }) {
 
     const { id } = await params;
     const imovel = await ImovelService.getById(id);

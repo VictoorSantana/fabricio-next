@@ -1,11 +1,5 @@
+export default function Oportunidade({ imovel }) {
 
-
-import { ImovelService } from '@/shared/services/imovel.service';
-
-const Oportunidade = async () => {
-
-    const imovel = await ImovelService.getOportunidade();
-    if (!imovel) return null;
 
     return (
         <div className="py-5">
@@ -52,12 +46,12 @@ const Oportunidade = async () => {
                                     {imovel.modo === 'alugar' && (
                                         <>
                                             Aluguel
-                                            <b>{imovel.valorAluguel}</b>
+                                            <b>{Number(imovel.valorAluguel).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b>
                                         </>
                                     )}
 
                                     {(imovel.modo === 'vender' || imovel.modo === 'aluga-vende') && (
-                                        <b>{imovel.valorVenda}</b>
+                                        <b>{Number(imovel.valorVenda).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b>
                                     )}
                                 </p>
                                 <p className="w-100 mb-5" dangerouslySetInnerHTML={{
@@ -100,5 +94,3 @@ const Oportunidade = async () => {
         </div>
     );
 }
-
-export default Oportunidade;
