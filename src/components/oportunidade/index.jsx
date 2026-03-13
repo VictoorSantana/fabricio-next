@@ -6,7 +6,7 @@ export default function Oportunidade({ imovel }) {
             <div className="container">
                 <div className="col-md-12 mb-5 text-center text-sm-start">
                     <span className="hbar"></span>
-                    <h1 className="mb-0">Oportunidade de hoje</h1>
+                    <h2 className="mb-0 h1">Oportunidade de hoje</h2>
                     <p>Imóveis em destaque</p>
                 </div>
                 <div className="col-md-12">
@@ -39,7 +39,7 @@ export default function Oportunidade({ imovel }) {
                             <div className="px-5 py-3">
                                 <div className="mb-3">
                                     <h3 className="d-inline-block text-dark mb-2">{imovel.tipo} {imovel.modoDesc}</h3>
-                                    <h5><b>{imovel.titulo}</b></h5>
+                                    <h4 className="h5"><b>{imovel.titulo}</b></h4>
                                 </div>
 
                                 <p className="text-primary">

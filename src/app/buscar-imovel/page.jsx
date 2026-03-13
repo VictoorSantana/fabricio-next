@@ -33,7 +33,7 @@ export default function BuscarImovel() {
         qtdBanheiros: 1,
         qtdDomitorios: 1,
         qtdGaragem: 1,
-        valorMax: 2500000,
+        valorMax: 5000000,
         modo: 'vender',
         ordem: 'menor'
     });

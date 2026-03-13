@@ -7,7 +7,7 @@ import CryptoJS from 'crypto-js';
 const FormDetalhe = ({ imovel }) => {
 
     const recaptchaRef = useRef(null);
-    const [modo, setModo] = useState(imovel.modo);
+    const [modo, setModo] = useState(imovel.modo === 'aluga-vende' ? 'vender' : imovel.modo);
     const [form, setForm] = useState({
         tipo: 'contato',
         nome: '',
@@ -82,13 +82,13 @@ const FormDetalhe = ({ imovel }) => {
     return (
         <div className="shadow-sm bg-white rounded py-3 px-4 w-100">
             <ul className="nav nav-tabs mb-4">
-                {Boolean(modo === 'vender' || modo === 'aluga-vende') && <li className="nav-item">
-                    <span onClick={() => setModo('vender')} className={modo === 'vender' ? "nav-link active" : "nav-link"}>
+                {Boolean(imovel.modo === 'vender' || imovel.modo === 'aluga-vende') && <li className="nav-item">
+                    <span onClick={() => setModo('vender')} className={modo === 'vender' ? "nav-link active" : "nav-link cursor-pointer"}>
                         Comprar
                     </span>
                 </li>}
-                {Boolean(modo === 'alugar' || modo === 'aluga-vende') && <li className="nav-item">
-                    <span onClick={() => setModo('alugar')} className={modo === 'alugar' ? "nav-link active" : "nav-link"}>
+                {Boolean(imovel.modo === 'alugar' || imovel.modo === 'aluga-vende') && <li className="nav-item">
+                    <span onClick={() => setModo('alugar')} className={modo === 'alugar' ? "nav-link active" : "nav-link cursor-pointer"}>
                         Alugar
                     </span>
                 </li>}

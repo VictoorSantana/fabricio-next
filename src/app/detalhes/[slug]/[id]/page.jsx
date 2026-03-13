@@ -61,12 +61,12 @@ export default async function DetalhesPage({ params }) {
                                 </>
                             ) : (
                                 <>
-                                    {" "} por{ " "} 
+                                    {" "} por{" "}
                                     {Number(imovel.valorVenda).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                                 </>
                             )
                         }
-                       {" "} - {" "}{imovel.localizacao}
+                        {" "} - {" "}{imovel.localizacao}
                     </h4>
                 </div>
 
@@ -91,7 +91,7 @@ export default async function DetalhesPage({ params }) {
                                         <div>
                                             <h6 className="mb-0">Dormitórios</h6>
                                             <p className="mb-0 small">
-                                                <span className="fw-bolder">{imovel.qtdDomitorios}</span>
+                                                <span className="fw-bolder">{imovel.qtdDomitorios.toString().padStart(2, '0')}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -102,12 +102,12 @@ export default async function DetalhesPage({ params }) {
                                             src="/images/shower.png"
                                             className="d-inline-block"
                                             style={{ width: 38 }}
-                                            alt="ícone de cama"
+                                            alt="ícone de banheiro"
                                         />
                                         <div>
                                             <h6 className="mb-0">Banheiros</h6>
                                             <p className="mb-0 small">
-                                                <span className="fw-bolder">{imovel.qtdBanheiros}</span>
+                                                <span className="fw-bolder">{imovel.qtdBanheiros.toString().padStart(2, '0')}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -118,14 +118,14 @@ export default async function DetalhesPage({ params }) {
                                             src="/images/car.png"
                                             className="d-inline-block"
                                             style={{ width: 35 }}
-                                            alt="ícone de cama"
+                                            alt="ícone de carro"
                                         />
                                         <div>
                                             <h6 className="mb-0">
                                                 Vaga <span className="d-none d-sm-block">de garagem</span>
                                             </h6>
                                             <p className="mb-0 small">
-                                                <span className="fw-bolder">{imovel.qtdGaragem}</span>
+                                                <span className="fw-bolder">{imovel.qtdGaragem.toString().padStart(2, '0')}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -136,7 +136,7 @@ export default async function DetalhesPage({ params }) {
                                             src="/images/size.png"
                                             className="d-inline-block"
                                             style={{ width: 35 }}
-                                            alt="ícone de cama"
+                                            alt="ícone de área"
                                         />
                                         <div>
                                             <h6 className="mb-0">Área construida</h6>
@@ -146,6 +146,17 @@ export default async function DetalhesPage({ params }) {
                                         </div>
                                     </div>
                                 </div>
+                                {imovel.m2Terreno && <div className="col-6 col-md-4">
+                                    <div className="d-flex gap-2 py-3">
+                                        <img src="/images/area.png" className="d-inline-block" style={{ width: 38 }} alt="ícone de terreno" />
+                                        <div>
+                                            <h6 className="mb-0">Área total</h6>
+                                            <p className="mb-0 small">
+                                                <span className="fw-bolder">{imovel.m2Terreno}m²</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>}
                             </div>
                             <div className="row mb-5 mb-sm-0">
                                 <div className="col-md-12 mb-5">
@@ -155,7 +166,7 @@ export default async function DetalhesPage({ params }) {
                                     </h5>
                                     <p dangerouslySetInnerHTML={{ __html: imovel.detalhes.replace(/\r?\n/g, '<br>') }} />
                                 </div>
-                                <div className="col-md-12">
+                                {/* <div className="col-md-12">
                                     <h5 className="mb-3">
                                         <i className="fas fa-check" />
                                         Caracteristicas do Imóvel
@@ -171,7 +182,7 @@ export default async function DetalhesPage({ params }) {
                                             }
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="col-md-4">

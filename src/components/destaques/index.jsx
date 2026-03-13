@@ -24,7 +24,7 @@ const Destaques = () => {
                 <div className="row mb-5 custom-anim slide-in-bottom">
                     <div className="col-md-12 text-center">
                         <span className="hbar" />
-                        <h1 className="mb-0">Em destaque</h1>
+                        <h2 className="mb-0 h1">Em destaque</h2>
                         <p>
                             Imóveis de luxo para quem busca viver ou investir com exclusividade.
                         </p>
@@ -106,12 +106,12 @@ const Destaques = () => {
                                         </div>
                                     </div>
                                     <div className="px-4 text-dark text-center">
-                                        <h4 className="mb-0" style={{ height: 90 }}>{item.titulo}</h4>
+                                        <h3 className="mb-0 h4" style={{ height: 90 }}>{item.titulo}</h3>
                                         {
                                             item.modo === "alugar" ? (
-                                                <h6 className="text-primary">R$ {Number(item.valorAluguel).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</h6>
+                                                <h4 className="text-primary h5">R$ {Number(item.valorAluguel).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</h4>
                                             ) : (
-                                                <h6 className="text-primary">R$ {Number(item.valorVenda).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</h6>
+                                                <h4 className="text-primary h5">R$ {Number(item.valorVenda).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</h4>
                                             )
                                         }
 

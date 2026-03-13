@@ -84,10 +84,10 @@ export default async function HomePage() {
                 <div className="bg-white w-100 rounded-pill py-3 pe-4 ps-4 ps-sm-5">
                   <div className="row align-items-center">
                     <div className="col-md-3 mb-3 mb-sm-0">
-                      <label htmlFor="" className="small d-block text-info">
+                      <label htmlFor="fieldTipoImovel" className="small d-block text-info">
                         Tipo
                       </label>
-                      <select className="form-select">
+                      <select className="form-select" id="fieldTipoImovel">
                         <option value="">Tipo</option>
                         <option value="Apartamento">Apartamento</option>
                         <option value="Casa">Casa</option>
@@ -97,10 +97,10 @@ export default async function HomePage() {
                       </select>
                     </div>
                     <div className="col-md-3 mb-3 mb-sm-0">
-                      <label htmlFor="" className="small d-block text-info">
+                      <label htmlFor="fieldQuartos" className="small d-block text-info">
                         Quartos
                       </label>
-                      <select className="form-select">
+                      <select className="form-select" id="fieldQuartos">
                         <option value="">Qtde.</option>
                         <option value={1}>1+</option>
                         <option value={2}>2+</option>
@@ -109,10 +109,10 @@ export default async function HomePage() {
                       </select>
                     </div>
                     <div className="col-md-3 mb-4 mb-sm-0">
-                      <label htmlFor="" className="small d-block text-info">
+                      <label htmlFor="fieldVagasGaragem" className="small d-block text-info">
                         Vagas garagem
                       </label>
-                      <select className="form-select">
+                      <select className="form-select" id="fieldVagasGaragem">
                         <option value="">Qtde.</option>
                         <option value={1}>1+</option>
                         <option value={2}>2+</option>
@@ -124,6 +124,7 @@ export default async function HomePage() {
                       <Link
                         href="/buscar-imovel"
                         className="btn btn-info text-white button-heading"
+                        aria-label="Buscar dentro dos imoveis disponíveis"
                       >
                         <i className="fas fa-search" />
                         Buscar
@@ -139,12 +140,14 @@ export default async function HomePage() {
                 <a
                   href="/buscar-imovel"
                   className="text-primary fw-bolder text-decoration-none d-inline-block"
+                  aria-label="Buscar imoveis para comprar"
                 >
                   Comprar
                 </a>
                 <a
                   href="/buscar-imovel"
                   className="text-primary fw-bolder text-decoration-none d-inline-block"
+                  aria-label="Buscar imoveis para alugar"
                 >
                   Alugar
                 </a>

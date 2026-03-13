@@ -1,16 +1,24 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CryptoJS from 'crypto-js';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
 
+    const router = useRouter();
     const [msg, setMsg] = useState(null);
     const [loading, setLoading] = useState(false)
     const [form, setForm] = useState({
         login: "",
         senha: ""
     })
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            router.push('/admin/home');
+        }
+    }, [router])
 
     const handleMsg = (msg, variant) => {
         setMsg({ msg, variant });
@@ -45,7 +53,7 @@ export default function Login() {
             handleMsg("Login realizado com sucesso", "success");
             localStorage.setItem('token', data.token);
             localStorage.setItem('usuario', JSON.stringify(data.usuario));
-            window.location.href = '/admin/home';
+            router.push('/admin/home');
         })
         .catch(() => {
             handleMsg("Erro ao realizar login", "danger");

@@ -66,7 +66,7 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="col-md-2 col-12 text-center text-sm-start">
-                        <h5 className="text-info mb-2">Links rápidos</h5>
+                        <h2 className="text-info mb-2 h5">Links rápidos</h2>
                         <span className="hbar mb-4" />
                         <a href="/" className="d-block text-dark no-linkable mb-3">
                             {" "}
@@ -90,7 +90,7 @@ const Footer = () => {
                         </a>
                     </div>
                     <div className="col-md-4 col-12 text-center text-sm-start">
-                        <h5 className="text-info mb-2 mt-3 mt-sm-0">Contatos</h5>
+                        <h3 className="text-info mb-2 mt-3 mt-sm-0 h5">Contatos</h3>
                         <span className="hbar mb-4" />
                         <p className="d-flex align-items-center justify-content-center justify-content-sm-start gap-2 text-dark no-linkable mb-3">
                             <i className="fas fa-phone text-dark" style={{ opacity: "0.5" }} />
@@ -109,7 +109,7 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="col-md-3 mt-5 mt-sm-0">
-                        <h5 className="text-info mb-2">Newsletter</h5>
+                        <h3 className="text-info mb-2 h5">Newsletter</h3>
                         <span className="hbar mb-4" />
                         <p className="d-block text-dark no-linkable mb-3">
                             Uma newsletter é um boletim informativo digital, geralmente enviado
@@ -133,14 +133,15 @@ const Footer = () => {
                                             required={true}
                                             placeholder="Informe seu e-mail"
                                             aria-label="Informe seu e-mail"
-                                            aria-describedby="basic-addon2"
+                                            aria-describedby="newsletterCampo"
                                             value={form.email}
                                             onChange={(e) => setForm((old) => ({ ...old, email: e.target.value }))}
                                         />
                                         <button
                                             type="submit"
                                             className="input-group-text bg-primary text-white cursor-pointer"
-                                            id="basic-addon2"
+                                            id="newsletterCampo"
+                                            aria-label="Botão para enviar o e-mail para ser atualizado com novidades"
                                         >
                                             <i className="fas fa-paper-plane" />
                                         </button>

@@ -10,7 +10,7 @@ import EtapaDestaque from "../_components/etapa-destaque";
 import { getFetch, postFetch, putFetch } from "../../fetch";
 import { convertToWebp } from "@/shared/services/webp.service";
 import EtapaFiles from "../_components/etapa-files";
-
+import { useRouter } from 'next/navigation';
 
 export default function Imovel() {
 
@@ -34,6 +34,8 @@ export default function Imovel() {
     const etapas = 4;
     const [etapa, setEtapa] = useState(0);
     
+    const router = useRouter();
+
     const [loading, setLoading] = useState(false);
     const [msg, setMsg] = useState(null);
     const [images, setImages] = useState([]);
@@ -195,7 +197,7 @@ export default function Imovel() {
             m2Terreno: Number(form.m2Terreno) || 0,
             m2Contruidos: Number(form.m2Contruidos) || 0,
         });
-        setLoading(false);
+
         handleMsg('Imóvel editado com sucesso!', 'success');
     }
 
@@ -206,7 +208,9 @@ export default function Imovel() {
             await editarImovel();
         }
 
-        window.location.href = '/admin/home';
+        setTimeout(() => {
+            router.push('/admin/home');
+        }, 2300);
     };
 
     return (
@@ -215,7 +219,7 @@ export default function Imovel() {
 
                 <div className="px-1 py-3">
                     <button className="btn btn-outline-primary border-0"
-                        onClick={() => window.history.back()}>
+                        onClick={() => router.back()}>
                         <i style={{ fontSize: '22px' }} className="far fa-arrow-left"></i>&nbsp;&nbsp;&nbsp;Voltar
                     </button>
                 </div>
