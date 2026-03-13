@@ -2,13 +2,28 @@ const { cloudinary } = require("../../config/bucket");
 const { HttpError } = require("../../config/domain");
 const { GenHash } = require("./util.service");
 
+
+
+const cloudinaryAsync = (buffer) => {
+    return new Promise((resolve, reject) => {
+        cloudinary.uploader
+            .upload_stream({ folder: "uploads" }, (error, result) => {
+                if (error) reject(error);
+                else resolve(result);
+            })
+            .end(buffer);
+    });
+}
 class BucketService {
     constructor() { }
 
-    static async upload(base64) {
+    static async upload(file) {
         try {
             const publicId = GenHash();
-            const result = await cloudinary.uploader.upload(base64, { public_id: publicId });
+            const bytes = await file.arrayBuffer();
+            const buffer = Buffer.from(bytes);
+            const result = await cloudinaryAsync(buffer);
+            
             return {
                 publicId,
                 url: result.secure_url

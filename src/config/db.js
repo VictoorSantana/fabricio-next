@@ -1,9 +1,6 @@
 import { Sequelize } from "sequelize";
 import mysql2 from 'mysql2'; // Import the package
 
-
-console.log("ENV AMBIENT ->", process.env.SERVER_AMBIENT, " NODEENV ->", process.env.NODE_ENV);
-
 const DB = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USER, process.env.DATABASE_PASS, {
     host: process.env.DATABASE_HOST,
     dialect: process.env.DATABASE_TYPE,

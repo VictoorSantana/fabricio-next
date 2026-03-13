@@ -50,15 +50,15 @@ const CardImovel = ({ imovel }) => {
                     <div className="d-flex gap-4 justify-content-evenly w-100 text-dark">
                         <div className="text-center">
                             <img src="/images/bed.png" className="d-inline-block" style={{ width: '30px' }} alt="ícone de cama" />
-                            <p className="small">{imovel.qtdDomitorios}</p>
+                            <p className="small">{imovel.qtdDomitorios.toString().padStart(2, '0')}</p>
                         </div>
                         <div className="text-center">
                             <img src="/images/shower.png" className="d-inline-block" style={{ width: '26px' }} alt="ícone de chuveiro" />
-                            <p className="small">{imovel.qtdBanheiros}</p>
+                            <p className="small">{imovel.qtdBanheiros.toString().padStart(2, '0')}</p>
                         </div>
                         <div className="text-center">
                             <img src="/images/car.png" className="d-inline-block" style={{ width: '28px' }} alt="ícone de carro" />
-                            <p className="small">{imovel.qtdGaragem}</p>
+                            <p className="small">{imovel.qtdGaragem.toString().padStart(2, '0')}</p>
                         </div>
                         <div className="text-center">
                             <img src="/images/size.png" className="d-inline-block" style={{ width: '30px' }} alt="ícone de área construida" />

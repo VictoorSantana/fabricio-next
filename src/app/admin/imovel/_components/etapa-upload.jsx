@@ -73,7 +73,7 @@ const EtapaUpload = ({ onChange }) => {
     };
 
     return (
-        <div className="p-3">
+        <div>
             {/* Área de upload */}
             <div
                 className="border-2 border-dashed border-secondary rounded-3 p-4 text-center cursor-pointer hover-bg-light"

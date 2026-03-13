@@ -68,7 +68,7 @@ const Destaques = () => {
                                                 style={{ width: 30 }}
                                                 alt="ícone de cama"
                                             />
-                                            <p className="small">{item.qtdDomitorios}</p>
+                                            <p className="small">{item.qtdDomitorios.toString().padStart(2, '0')}</p>
                                         </div>
                                         <div
                                             className="text-center"
@@ -81,7 +81,7 @@ const Destaques = () => {
                                                 style={{ width: 26 }}
                                                 alt="ícone de chuveiro"
                                             />
-                                            <p className="small">{item.qtdBanheiros}</p>
+                                            <p className="small">{item.qtdBanheiros.toString().padStart(2, '0')}</p>
                                         </div>
                                         <div className="text-center" aria-label="Vagas de garagem">
                                             <img
@@ -90,7 +90,7 @@ const Destaques = () => {
                                                 style={{ width: 28 }}
                                                 alt="ícone de carro"
                                             />
-                                            <p className="small">{item.qtdGaragem}</p>
+                                            <p className="small">{item.qtdGaragem.toString().padStart(2, '0')}</p>
                                         </div>
                                         <div
                                             className="text-center"
@@ -102,7 +102,7 @@ const Destaques = () => {
                                                 style={{ width: 30 }}
                                                 alt="ícone de área construida"
                                             />
-                                            <p className="small">{item.areaConstruida}m²</p>
+                                            <p className="small">{item.m2Contruidos}m²</p>
                                         </div>
                                     </div>
                                     <div className="px-4 text-dark text-center">

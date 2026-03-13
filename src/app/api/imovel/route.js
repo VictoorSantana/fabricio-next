@@ -2,10 +2,12 @@ import { NextResponse } from 'next/server';
 import { NeedAuth, Validate } from '@/shared/middlewares';
 import { ImovelModoEnum, ImovelSituacaoEnum, ImovelTipoEnum } from '@/models/imovel.model';
 
+import { CreateImovelUseCase } from '@/usecases/imovel/create-imovel.uc';
 import { SearchImovelUseCase } from '@/usecases/imovel/search-imovel.uc';
 import { UpdateImovelUseCase } from '@/usecases/imovel/update-imovel.uc';
 
 import z from 'zod';
+
 
 export async function GET(req) {
 
@@ -66,4 +68,43 @@ export async function PUT(req) {
 
   const res = await UpdateImovelUseCase.execute(body);
   return NextResponse.json(res);
+}
+
+
+export async function POST(req) {
+  const { errorAuth } = await NeedAuth(req);
+  if (errorAuth) {
+    return NextResponse.json({ error: errorAuth }, { status: 401 });
+  }
+
+  const body = await req.json();
+
+  const validationError = Validate(body, z.object({
+    titulo: z.string({ message: "É obrigatório" }),
+    localizacao: z.string().optional(),
+    m2Contruidos: z.int32().optional(),
+    m2Terreno: z.int32().optional(),
+    valorAluguel: z.float32().optional(),
+    valorVenda: z.float32().optional(),
+    qtdDomitorios: z.int32().optional(),
+    qtdBanheiros: z.int32().optional(),
+    qtdGaragem: z.int32().optional(),
+    caracteristicas: z.array(z.string()).optional(),
+    detalhes: z.string().max(1200).optional(),
+
+    anexosId: z.array(z.int32()).optional(),
+
+    destaque: z.boolean().optional(),
+
+    tipo: z.enum(ImovelTipoEnum),
+    modo: z.enum(ImovelModoEnum),
+    situacao: z.enum(ImovelSituacaoEnum)
+  }))
+
+  if (validationError) {
+    return NextResponse.json({ error: validationError }, { status: 400 });
+  }
+
+  const result = await CreateImovelUseCase.execute(body);
+  return NextResponse.json(result);
 } 

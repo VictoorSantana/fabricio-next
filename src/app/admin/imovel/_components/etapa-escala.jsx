@@ -23,12 +23,12 @@ const EtapaEscala = ({
     qtdBanheiros,
     qtdGaragem,
     m2Terreno,
-    m2Construidos,
+    m2Contruidos,
     tipo,
     onChange
 }) => {
     return (
-        <div className="container">
+        <div>
 
             <div className="mb-4">
                 <label htmlFor="">Tipo de Imóvel</label>
@@ -45,12 +45,12 @@ const EtapaEscala = ({
 
             <div className="d-flex gap-3">
                 <div className="mb-4">
-                    <label htmlFor="">M² Contruidos</label>
-                    <input type="number" className="form-control" value={m2Construidos} onChange={(e) => onChange({ m2Construidos: e.target.value })} />
+                    <label htmlFor="">M² Contruídos</label>
+                    <input type="number" className="form-control" value={m2Contruidos} onChange={(e) => onChange({ m2Contruidos: e.target.value })} />
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="">M² Total</label>
+                    <label htmlFor="">M² Total terreno</label>
                     <input type="number" className="form-control" value={m2Terreno} onChange={(e) => onChange({ m2Terreno: e.target.value })} />
                 </div>
             </div>

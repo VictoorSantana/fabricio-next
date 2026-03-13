@@ -1,8 +1,8 @@
-const { ImovelRepo, ImovelAnexoRepo } = require("../../repo");
-const { ImovelService } = require("../../shared/services/imovel.service");
-const { CreateSlug } = require("../../shared/services/util.service");
+import { ImovelRepo, ImovelAnexoRepo } from "../../repo";
+import { ImovelService } from "../../shared/services/imovel.service";
+import { CreateSlug } from "../../shared/services/util.service";
 
-class CreateImovelUseCase {
+export class CreateImovelUseCase {
     constructor() { }
 
     static async execute(input) {
@@ -30,6 +30,4 @@ class CreateImovelUseCase {
         return imovelDb;
     }
 }
-
-module.exports = CreateImovelUseCase;
 

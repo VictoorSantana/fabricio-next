@@ -1,7 +1,7 @@
-const { HttpError } = require("../../config/domain");
-const { ImovelRepo, ImovelAnexoRepo, DiscoRepo } = require("../../repo");
+import { HttpError } from "../../config/domain";
+import { ImovelRepo, ImovelAnexoRepo, DiscoRepo } from "../../repo";
 
-class FindOneImovelUseCase {
+export class FindOneImovelUseCase {
     constructor() { }
 
     static async execute(input) {
@@ -32,6 +32,3 @@ class FindOneImovelUseCase {
         return imovelDb;
     };
 }
-
-module.exports = FindOneImovelUseCase;
-

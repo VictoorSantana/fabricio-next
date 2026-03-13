@@ -50,7 +50,7 @@ export default function Interacao() {
             <div className="bg-white w-100 pb-5" style={{ minHeight: '100vh', maxWidth: '800px', margin: '0 auto' }}>
                 <div className="position-sticky w-100 d-inline-block bg-white" style={{ top: '0px', left: '0px', zIndex: 50 }}>
                     <div className="d-flex justify-content-between align-items-center px-1 py-3">
-                        <button className="btn btn-outline-primary btn-lg border-0"
+                        <button className="btn btn-outline-primary border-0"
                             onClick={() => window.history.back()}>
                             <i style={{ fontSize: '22px' }} className="far fa-arrow-left"></i>&nbsp;&nbsp;&nbsp;Voltar
                         </button>

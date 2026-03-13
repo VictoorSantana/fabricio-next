@@ -2,33 +2,28 @@
 
 import { NumericFormat } from "react-number-format";
 
-
-const maskMoney = (value) => {
-    return value.replace(/\D/g, '').replace(/(\d)(\d{2})$/, '$1,$2').replace(/(?=(\d{3})+(?!\d))(\d{3})/g, '$&,');
-}
-
 const EtapaDescricao = ({
     titulo,
     localizacao,
-    descricao,
+    detalhes,
     valorVenda,
     valorAluguel,
     onChange    
 }) => {
     return (
-        <div className="container">
+        <div className="row">
 
-            <div className="mb-4">
-                <label htmlFor="titulo">Título</label>
+            <div className="col-md-3 mb-4">
+                <label htmlFor="titulo">Título <span className="text-danger">*</span> </label>
                 <input className="form-control" required={true} name="titulo" value={titulo} onChange={(e) => onChange({ titulo: e.target.value })} />
             </div>
 
-            <div className="mb-4">
-                <label htmlFor="localizacao">Localização</label>
+            <div className="col-md-3 mb-4">
+                <label htmlFor="localizacao">Localização <span className="text-danger">*</span></label>
                 <input className="form-control" required={true} name="localizacao" value={localizacao} onChange={(e) => onChange({ localizacao: e.target.value })} />
             </div>
 
-            <div className="mb-4">
+            <div className="col-md-3 mb-4">
                 <label htmlFor="valorVenda">Valor venda</label>
                 <NumericFormat
                     thousandSeparator="."
@@ -46,7 +41,7 @@ const EtapaDescricao = ({
                 />
             </div>
 
-            <div className="mb-4">
+            <div className="col-md-3 mb-4">
                 <label htmlFor="valorAluguel">Valor aluguel</label>
                 <NumericFormat
                     thousandSeparator="."
@@ -58,15 +53,14 @@ const EtapaDescricao = ({
                     value={valorAluguel}
                     onValueChange={(values) => {
                         const { value } = values;
-                        // value: 1000.00 (para salvar no banco)
                         onChange({ valorAluguel: value });
                     }}
                 />
             </div>
 
             <div className="mb-4">
-                <label htmlFor="descricao">Descrição</label>
-                <textarea className="form-control" name="descricao" value={descricao} onChange={(e) => onChange({ descricao: e.target.value })} rows={5}></textarea>
+                <label htmlFor="detalhes">Descrição <span className="text-danger">*</span></label>
+                <textarea className="form-control" required={true} name="detalhes" value={detalhes} onChange={(e) => onChange({ detalhes: e.target.value })} rows={5}></textarea>
             </div>
 
         </div>

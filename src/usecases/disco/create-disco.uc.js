@@ -1,9 +1,10 @@
-const { HttpError } = require("../../config/domain");
-const { DiscoRepo } = require("../../repo");
-const { BucketService } = require("../../shared/services/bucket.service");
-const { ValidateWebp, FileToBase64 } = require("../../shared/services/util.service");
+import { HttpError } from "../../config/domain";
+import { DiscoRepo } from "../../repo";
+import { BucketService } from "../../shared/services/bucket.service";
+import { ValidateWebp, FileToBase64 } from "../../shared/services/util.service";
 
-class CreateDiscoUseCase {
+
+export class CreateDiscoUseCase {
     constructor() { }
 
     static async execute(input) {
@@ -18,8 +19,8 @@ class CreateDiscoUseCase {
             ValidateWebp(input.arquivo);
             ValidateWebp(input.thumb);
 
-            thumbUploaded = await BucketService.upload(FileToBase64(input.thumb));
-            uploaded = await BucketService.upload(FileToBase64(input.arquivo));
+            thumbUploaded = await BucketService.upload(input.thumb);
+            uploaded = await BucketService.upload(input.arquivo);
 
             uploaded.contentType = 'image/webp';
             uploaded.extension = 'webp';
@@ -42,6 +43,3 @@ class CreateDiscoUseCase {
         return discoDb;
     }
 }
-
-module.exports = CreateDiscoUseCase;
-

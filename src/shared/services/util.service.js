@@ -1,4 +1,4 @@
-// const fs = require('fs');
+import fs from 'fs';
 
 export function RandomBetween(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -48,10 +48,10 @@ export function ValidateWebp(file) {
   return true;
 }
 
-// export function FileToBase64(file) {
-//   const buffer = fs.readFileSync(file.path);
-//   return `data:${file.type};base64,${buffer.toString('base64')}`;
-// }
+export function FileToBase64(file) {
+  const buffer = fs.readFileSync(file.path);
+  return `data:${file.type};base64,${buffer.toString('base64')}`;
+}
 
 export function Parsed(dataValues) {
   return JSON.parse(JSON.stringify(dataValues));
