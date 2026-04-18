@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.fabriciomundim.com.br/sitemap.xml
+Sitemap: https://www.fabriciomundim.com.br/sitemap

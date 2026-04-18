@@ -13,6 +13,11 @@ const UsuarioRepo = DB.define(
             defaultValue: 0,
             field: 'nome'
         },
+        email: {
+            type: DataTypes.STRING(100),
+            allowNull: true,
+            field: 'email'
+        },
         login: {
             type: DataTypes.STRING(60),
             allowNull: false,
@@ -24,6 +29,11 @@ const UsuarioRepo = DB.define(
             allowNull: false,
             defaultValue: 0,
             field: 'senha'
+        },
+        facebookToken: {
+            type: DataTypes.STRING(550),
+            allowNull: true,
+            field: 'facebook_token'
         },
         situacao: {
             type: DataTypes.ENUM('ativo', 'inativo'),

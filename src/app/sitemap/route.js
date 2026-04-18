@@ -1,7 +1,9 @@
+export const dynamic = 'force-dynamic'
+
 import { ImovelService } from "@/shared/services/imovel.service";
 
 export async function GET() {
-    const baseUrl = process.env.HOSTNAME;
+    const baseUrl = 'https://fabriciomundim.com.br';
 
     const urls = [
         { loc: "/", priority: "1.0" },

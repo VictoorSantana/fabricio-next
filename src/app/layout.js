@@ -1,6 +1,14 @@
+// import { startScheduledJobs } from "@/lib/instagramJob";
+
 import "./theme.css";
 import "./anim.css";
 import "./custom.css";
+
+// Inicia os cron jobs quando o servidor inicializa
+// if (typeof window === 'undefined') { // Garante que só roda no servidor
+//   console.log('🚀 Iniciando cron jobs do servidor...');
+//   startScheduledJobs();
+// }
 
 export const metadata = {
   title: "Fabrício Mundim - Agente imobiliário",
@@ -8,8 +16,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
-  
 
   return (
     <html lang="pt-BR">
