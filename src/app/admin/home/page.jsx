@@ -7,6 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { getFetch, putFetch } from "../fetch";
 import BtnInteracao from "@/components/btnInteracao";
+import BtnUsuario from "@/components/btnUsuario";
 
 const cutText = (text, maxLength) => {
     return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
@@ -107,7 +108,10 @@ export default function Home() {
                         <i style={{ fontSize: '22px' }} className="far fa-plus"></i> {!mobile && 'Adicionar'}
                     </Link>
                     <h4>Imóveis</h4>
-                    <BtnInteracao />
+                    <div>
+                        <BtnInteracao />
+                        <BtnUsuario />
+                    </div>
                 </div>
 
                 <div className="container mb-5">
