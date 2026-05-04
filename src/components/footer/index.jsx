@@ -88,6 +88,10 @@ const Footer = () => {
                             {" "}
                             • Sobre
                         </a>
+                         <a href="/termos" className="d-block text-dark no-linkable mb-3">
+                            {" "}
+                            • Termos
+                        </a>
                     </div>
                     <div className="col-md-4 col-12 text-center text-sm-start">
                         <h3 className="text-info mb-2 mt-3 mt-sm-0 h5">Contatos</h3>
