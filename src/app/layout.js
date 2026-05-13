@@ -35,6 +35,8 @@ export default function RootLayout({ children }) {
         <meta name="keywords" content="imóveis, imóveis à venda, imóveis para alugar, comprar imóvel, alugar imóvel, venda de imóveis, aluguel de imóveis, apartamentos à venda, casas à venda, apartamentos para alugar, casas para alugar, imobiliária, corretor de imóveis, corretor imobiliário, consultoria imobiliária, imóveis residenciais, imóveis comerciais, terrenos à venda, lançamentos imobiliários, imóveis financiados, imóveis com escritura, imóveis prontos para morar, imóveis de alto padrão, aluguel residencial, aluguel comercial" />
         <meta name="description" content="Agente imobiliário especializado em imóveis de alto padrão em Cuiabá, oferecendo consultoria personalizada para compra, venda e locação. Comprometido em transformar cada negociação em uma experiência segura, sofisticada e de alto valor." />
 
+        <meta name="google-site-verification" content="BzbpVsblzQus2CFz0w4xe5jvQlav8BvDHbMTr9Zru3Y" />
+        
         <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png" />
